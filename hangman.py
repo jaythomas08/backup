@@ -3,29 +3,26 @@
 # October 21st, 2019
 # Hangman project
 
-import random
-myWord = "random"
-
-myString = "myWord"
-myList = list(myString )
+secretWord = "arizona cardinals"
+secretWord = list(secretWord)
 
 guessList=[]
-for a in myList:
+for a in secretWord:
 	guessList.append("_")
 print(guessList)
 
-letter = input("type a letter") 
-
-if letter in myWord:
-	print("letter is in word")
-else:
-	print("letter is not in word")
+numMisses = int(input("please type in number of misses you are allowed: "))
 
 
+misses = 0
+while misses < numMisses:
+	guess = input("enter a letter: ")
+	if guess in secretWord:
+		print("letter is in word")
+	else:
+		misses += 1
+print(misses)
 
 
-count = 0
-for l in myWord:
-	if l == letter:
-		print(count)
-		count += 1 
+
+print("GAME OVER BRUV BETTER LUCK NEXT TIME")
