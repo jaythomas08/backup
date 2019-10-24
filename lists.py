@@ -72,7 +72,57 @@ guessList[1] = "r"
 print(guessList)
 
 choice = input("Type a word:")
-if choice == myWord:
+if choice == myString:
 	print("its a match")
 else:
 	print("not a match")
+
+secretWord = "christmas"
+secretWord = list(secretWord)
+
+misses = 0
+
+while misses < 7:
+	guess = input("guess a letter: ")
+	if guess in secretWord:
+		# loop through secretwords and change guessList at the correct indexes
+		print("letter is in the word")
+	else:
+		misses += 1 
+
+print("GAME OVER BRUV BETTER LUCK NEXT TIME")
+
+count = 0
+for l in myWord:
+	if l == letter:
+		print(count)
+		count += 1 
+
+guessList=[]
+for a in secretWord:
+	guessList.append("_")
+print(guessList)
+
+numMisses = int(input("please type in number of misses you are allowed: "))
+
+misses = 0
+while misses < numMisses:
+	guess = input("enter a letter: ")
+	if guess in secretWord:
+		print("letter is in word")
+	else:
+		misses += 1
+
+# how to loop through a string and replace letters
+mystery = list("halloween")
+guessJist = list("_________")
+
+guess = input("guess a letter: ")
+index = 0
+
+for letter in mystery:
+	if letter == guess:
+		guessJist[index] = guess
+	index += 1
+
+print(guessJist)
